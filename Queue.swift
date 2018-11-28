@@ -53,7 +53,7 @@ extension Queue {
     }
     
     func isEmpty() -> Bool {
-        return self.size != 0
+        return self.size == 0
     }
     
     func headValue() -> T? {
