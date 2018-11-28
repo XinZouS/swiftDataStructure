@@ -52,6 +52,10 @@ extension Queue {
         return currHead.val
     }
     
+    func isEmpty() -> Bool {
+        return self.size != 0
+    }
+    
     func headValue() -> T? {
         if let h = head {
             return h.val
@@ -67,7 +71,7 @@ extension Queue {
     }
     
     func printAll() {
-        var str = "["
+        var str = ""
         var curr = head
         while curr != nil && curr?.next != nil {
             if let val = curr?.val {
@@ -78,8 +82,7 @@ extension Queue {
         if let t = tail {
             str = "\(str)\(t.val)"
         }
-        str += "]"
-        print(str)
+        print("[\(str)]")
     }
 }
 
