@@ -45,8 +45,12 @@ extension Heap {
     
     func printArray() {
         var str = ""
-        for n in nums {
-            str = "\(str), \(n)"
+        for (i,n) in nums.enumerated() {
+            if i == 0 {
+                str = "\(n)"
+            } else {
+                str = "\(str), \(n)"
+            }
         }
         print("[\(str)]")
     }
