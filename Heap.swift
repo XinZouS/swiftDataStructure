@@ -6,6 +6,7 @@ public class Heap<T: Comparable> {
     fileprivate var nums: [T]
     fileprivate var compair: (_ a: T, _ b: T) -> Bool
     
+    /// Define a MaxHeap or MinHeap by passing > or < into compairMethod
     init(_ compairMethod: @escaping (_ a: T, _ b: T) -> Bool ) {
         self.compair = compairMethod
         self.nums = []
@@ -59,7 +60,6 @@ extension Heap {
         while curr < nums.count {
             let l = curr * 2 + 1
             let r = curr * 2 + 2
-            print("nums.count = \(nums.count), l = \(l), r = \(r)")
             if l >= nums.count { return }
             if l == nums.count - 1, !compair(nums[curr], nums[l]) {
                 swapAtIndex(curr, l)
