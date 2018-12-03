@@ -43,6 +43,10 @@ extension Heap {
         return nums.count
     }
     
+    func isEmpty() -> Bool {
+        return nums.isEmpty
+    }
+    
     func printArray() {
         var str = ""
         for (i,n) in nums.enumerated() {
