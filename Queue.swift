@@ -56,14 +56,14 @@ extension Queue {
         return self.size == 0
     }
     
-    func headValue() -> T? {
+    func first() -> T? {
         if let h = head {
             return h.val
         }
         return nil
     }
     
-    func tailValue() -> T? {
+    func last() -> T? {
         if let t = tail {
             return t.val
         }
