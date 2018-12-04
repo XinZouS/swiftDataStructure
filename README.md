@@ -53,3 +53,21 @@ myHeap.pop()
 myHeap.printArray() // [3.0, 5.0, 4.0, 6.0]
 myHeap.top()	// 3.0
 ~~~
+
+## SegmentTree
+Finding the max/min item in any range of array(n) by O(logm) time, where m = (2*n - 1) is the number of nodes in tree.
+* Usage:
+~~~swift
+let arr = [7,4,0,9,1,8,2,5,6,3]
+let myTree = SegmentTree(nums: arr)
+
+// find the max(>) item in index range of [3, 7]
+let maxIdx = myTree.findTargetIndex(start: 3, end: 7, compair: >)
+print("find MAX idx = \(maxIdx), maxVal = \(arr[maxIdx])")
+// find MAX idx = 3, maxVal = 9
+
+// find the min(<) item in index range of [5, 9]
+let minIdx = myTree.findTargetIndex(start: 5, end: 9, compair: <)
+print("find MIN idx = \(minIdx), minVal = \(arr[minIdx])")
+// find MIN idx = 6, minVal = 2
+~~~
