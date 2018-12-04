@@ -71,6 +71,12 @@ extension SegmentTree {
         return find(start, end, self.root, compair)
     }
     
+    /// find the value of target in section, for cases that have no access to the array
+    func findTargetValue(start: Int, end: Int, compair: (_ a: T, _ b: T) -> Bool) -> T? {
+        let idx = find(start, end, self.root, compair)
+        return idx == -1 ? nil : nums[idx]
+    }
+    
     /// helper to do the searching process
     private func find(_ str: Int, _ end: Int, _ root: SegmentTreeNode?, _ cmp: (_ a: T, _ b: T) -> Bool) -> Int {
         if str > end || str >= nums.count || end < 0 { return -1 }
