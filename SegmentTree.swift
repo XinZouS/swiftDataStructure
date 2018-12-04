@@ -77,6 +77,12 @@ extension SegmentTree {
         return idx == -1 ? nil : nums[idx]
     }
     
+    /// return (Int, T?) to access both index and the value
+    func findBothIndexAndValue(start: Int, end: Int, compair: (_ a: T, _ b: T) -> Bool) -> (Int, T?) {
+        let idx = find(start, end, self.root, compair)
+        return idx == -1 ? (idx, nil) : (idx, nums[idx])
+    }
+    
     /// helper to do the searching process
     private func find(_ str: Int, _ end: Int, _ root: SegmentTreeNode?, _ cmp: (_ a: T, _ b: T) -> Bool) -> Int {
         if str > end || str >= nums.count || end < 0 { return -1 }

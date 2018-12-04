@@ -84,6 +84,8 @@ print("find MIN idx = \(minIdx), minVal = \(arr[minIdx])")
 
 let maxVal = myTree.findTargetValue(start: 5, end: 7, compair: >)
 // maxVal = 8, 
+let maxVal = myTree.findBothIndexAndValue(start: 5, end: 7, compair: >)
+// maxVal = (5, 8), i.e. maxVal.0 = 5, maxVal.1 = 8
 ~~~
 
 
