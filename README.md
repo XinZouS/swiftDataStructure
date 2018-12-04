@@ -53,6 +53,17 @@ myHeap.pop()
 myHeap.printArray() // [3.0, 5.0, 4.0, 6.0]
 myHeap.top()	// 3.0
 ~~~
+Or use an array to init the Heap for easier searching
+~~~swift
+let arr: [Double] = [4,5,2,3,6,1,0]
+let myHeap = Heap<Double>(arr, <) // use (>) is MaxHeap, (<) is MinHeap
+myHeap.printArray() // [0.0, 3.0, 1.0, 5.0, 6.0, 4.0, 2.0]
+myHeap.pop()    // 0
+myHeap.pop()    // 1
+myHeap.pop()    // 2
+myHeap.printArray() // [3.0, 5.0, 4.0, 6.0]
+myHeap.top()    // 3
+~~~
 
 ## SegmentTree
 Finding the max/min item in any range of array(n) by O(logm) time, where m = (2*n - 1) is the number of nodes in tree.

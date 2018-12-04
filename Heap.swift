@@ -11,6 +11,14 @@ public class Heap<T: Comparable> {
         self.compair = compairMethod
         self.nums = []
     }
+    
+    init(_ arr: [T], _ compairMethod: @escaping (_ a: T, _ b: T) -> Bool ) {
+        self.compair = compairMethod
+        self.nums = []
+        for n in arr {
+            push(n)
+        }
+    }
 }
 
 /// Main functions
@@ -21,15 +29,17 @@ extension Heap {
         heapifyBottomUp()
     }
     
-    func pop() {
-        if nums.count == 0 { return }
+    func pop() -> T? {
+        if nums.count == 0 { return nil }
+        let first = nums.first
         if nums.count <= 2 {
             nums.removeFirst()
-            return
+            return first
         }
         swapAtIndex(0, nums.count - 1)
         nums.removeLast()
         heapifyTopDown()
+        return first
     }
     
     func top() -> T? {
