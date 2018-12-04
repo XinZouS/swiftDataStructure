@@ -26,7 +26,7 @@ public class SegmentTree<T: Comparable> {
     /// array only accept numerical type
     private var nums: [T]
     
-    init(nums: [T]) {
+    init(_ nums: [T]) {
         self.nums = nums
         if nums.count > 0 {
             self.root = setupSegmentTree(0, nums.count - 1)

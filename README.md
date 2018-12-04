@@ -70,7 +70,7 @@ Finding the max/min item in any range of array(n) by O(logm) time, where m = (2*
 * Usage:
 ~~~swift
 let arr = [7,4,0,9,1,8,2,5,6,3]
-let myTree = SegmentTree(nums: arr)
+let myTree = SegmentTree(arr)
 
 // find the max(>) item in index range of [3, 7]
 let maxIdx = myTree.findTargetIndex(start: 3, end: 7, compair: >)
