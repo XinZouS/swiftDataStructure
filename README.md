@@ -71,3 +71,9 @@ let minIdx = myTree.findTargetIndex(start: 5, end: 9, compair: <)
 print("find MIN idx = \(minIdx), minVal = \(arr[minIdx])")
 // find MIN idx = 6, minVal = 2
 ~~~
+
+
+### Compatibility
+- iOS 9.0+
+- Swift 3.0+
+- Xcode 10
